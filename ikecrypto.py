@@ -317,7 +317,7 @@ class ikeCrypto(object):
 
         	if debug > 0:
                 	print "Encrypting/Decrypting 3DES ISAKMP payload"	
-        	crypt = DES3.new(encKey, DES.MODE_CBC, IV)
+        	crypt = DES3.new(encKey, DES3.MODE_CBC, IV)
 		return crypt
 
         if encType == "DES-CBC" or encType == "01" or encType == 1:
