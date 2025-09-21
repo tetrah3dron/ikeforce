@@ -10,7 +10,7 @@
 import hmac
 import binascii
 import hashlib
-from Crypto.Cipher import *
+from Crypto.Cipher import DES3, DES, AES
 
 debug = 0
 
