@@ -884,7 +884,7 @@ class IKEv1Handler(object):
                         print "Encrypted Payload: %s"%encPayload
 		if msgID == "00000000":
 			#If the message ID is null then initial IV is used
-			ikeCrypto = crypto.ikeCrypto()
+			ikeCrypto = ikecrypto.ikeCrypto()
 			ikeDecrypt = ikeCrypto.ikeCipher(encKey, initIV.decode('hex'), encType)
         		ikePlain = ikeDecrypt.decrypt(rawencPayload).encode('hex')		
 			if self.debug > 0:
@@ -899,7 +899,7 @@ class IKEv1Handler(object):
 
 
 		elif msgID != "00000000":
-                	ikeCrypto = crypto.ikeCrypto()
+                	ikeCrypto = ikecrypto.ikeCrypto()
                 	try:
                         	if self.debug > 0:
                         	        print "Current IV: %s"%curIV.encode('hex')
